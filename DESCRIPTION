@@ -1,0 +1,13 @@
+Package: thComponents
+Title: Custom components for use on the Trainer Hill site
+Version: 0.0.1
+Description: Custom components for use on the Trainer Hill site
+Depends: R (>= 3.0.2)
+Imports: 
+Suggests: 
+License: MIT + file LICENSE
+URL: 
+BugReports: 
+Encoding: UTF-8
+LazyData: true
+KeepSource: true

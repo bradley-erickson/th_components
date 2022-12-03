@@ -1,0 +1,11 @@
+include th_components/th_components.min.js
+include th_components/th_components.min.js.map
+include th_components/async-*.js
+include th_components/async-*.js.map
+include th_components/*-shared.js
+include th_components/*-shared.js.map
+include th_components/metadata.json
+include th_components/package-info.json
+include README.md
+include LICENSE
+include package.json
