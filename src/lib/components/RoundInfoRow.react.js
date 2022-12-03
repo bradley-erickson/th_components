@@ -17,6 +17,13 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
 
     const {id, class_name, data, is_open, setProps, loading_state} = props;
 
+    // TODO check for empty data
+    if (data === undefined) {
+        return (
+            <div/>
+        );
+    }
+
     const results = data.games.map(x => x.result);
     const color = (results[results.length - 1] === 'w') ? 'bg-win' : (results[results.length - 1] === 'l') ? 'bg-loss' : 'bg-tie';
 
@@ -47,7 +54,7 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
         return (
             <RBCard
                 key={`game-${x.game}`}
-                className='border-0 px-2 py-1'
+                className='border-0 px-2 py-1 bg-transparent'
             >
                 <div>
                     <strong key='game-text'>{`G${x.game}`}</strong>
