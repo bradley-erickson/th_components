@@ -22,6 +22,9 @@ Keyword arguments:
 - data (dict; optional):
     The data displayed on the card.
 
+- is_open (boolean; optional):
+    Whether collapse is currently open.
+
 - loading_state (dict; optional):
     Object that holds the loading state object coming from
     dash-renderer.
@@ -41,10 +44,10 @@ Keyword arguments:
     _namespace = 'th_components'
     _type = 'RoundInfoRow'
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, class_name=Component.UNDEFINED, data=Component.UNDEFINED, loading_state=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'class_name', 'data', 'loading_state']
+    def __init__(self, id=Component.UNDEFINED, class_name=Component.UNDEFINED, data=Component.UNDEFINED, is_open=Component.UNDEFINED, loading_state=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'class_name', 'data', 'is_open', 'loading_state']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'class_name', 'data', 'loading_state']
+        self.available_properties = ['id', 'class_name', 'data', 'is_open', 'loading_state']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()

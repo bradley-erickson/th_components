@@ -10,7 +10,8 @@ ExampleComponent is an example component. It takes a property, `label`, and di
 }
 
 \usage{
-''RoundInfoRow(id=NULL, class_name=NULL, data=NULL, loading_state=NULL)
+''RoundInfoRow(id=NULL, class_name=NULL, data=NULL, is_open=NULL,
+loading_state=NULL)
 }
 
 \arguments{
@@ -19,6 +20,8 @@ ExampleComponent is an example component. It takes a property, `label`, and di
 \item{class_name}{Character. Classes for the outer most card.}
 
 \item{data}{Named list. The data displayed on the card.}
+
+\item{is_open}{Logical. Whether collapse is currently open.}
 
 \item{loading_state}{Lists containing elements 'is_loading', 'prop_name', 'component_name'.
 those elements have the following types:

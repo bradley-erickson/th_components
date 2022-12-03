@@ -1,7 +1,6 @@
 {
   "src/lib/components/RoundInfoRow.react.js": {
     "description": "ExampleComponent is an example component.\r\nIt takes a property, `label`, and\r\ndisplays it.\r\nIt renders an input with the property `value`\r\nwhich is editable by the user.",
-    "displayName": "RoundInfoRow",
     "methods": [],
     "props": {
       "id": {
@@ -24,6 +23,13 @@
         },
         "required": false,
         "description": "The data displayed on the card."
+      },
+      "is_open": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether collapse is currently open."
       },
       "setProps": {
         "type": {
