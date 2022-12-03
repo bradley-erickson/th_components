@@ -20,9 +20,10 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
     const results = data.games.map(x => x.result);
     const color = (results[results.length - 1] === 'w') ? 'bg-win' : (results[results.length - 1] === 'l') ? 'bg-loss' : 'bg-tie';
 
-    const header_icons = data.opponent.src.map(x => {
+    const header_icons = data.opponent.src.map((x, index) => {
         return (
             <img
+                key={`image-${index}`}
                 src={x}
                 className='me-1'
                 style={{maxHeight: '35px'}}
