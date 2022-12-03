@@ -1,4 +1,4 @@
-import React, { Componenmt, useState } from 'react';
+import React, { Component, useState } from 'react';
 import PropTypes from 'prop-types';
 import RBRow from 'react-bootstrap/Row';
 import RBCol from 'react-bootstrap/Col';
