@@ -43,7 +43,7 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
             return (
                 <Badge
                     key={x}
-                    className='ms-2 border'
+                    className='me-1 border'
                     text='dark'
                     bg='light'
                 >
@@ -91,8 +91,11 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
     })
 
     return (
-        <RBRow className={`${color} w-100 me-0`}>
-            <RBCol xs={12}>
+        <RBRow className={`${color} g-0`}>
+            <RBCol
+                xs={12}
+                className='pe-0'
+            >
                 <RBCard className='d-flex flex-row align-items-center px-1'>
                     {data.round}
                     <h4 className='ms-2 my-2'>
