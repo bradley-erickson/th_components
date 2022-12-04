@@ -91,7 +91,7 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
     })
 
     return (
-        <RBRow className={`${color} g-0`}>
+        <RBRow className={`${color} g-0 ${class_name}`}>
             <RBCol
                 xs={12}
                 className='pe-0'
