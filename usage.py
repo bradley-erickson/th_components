@@ -15,7 +15,7 @@ app.layout = html.Div([
             'round': 0,
             'opponent': {
                 'src': ['https://cdn.statically.io/gh/bradley-erickson/pokesprite/68ce3f7d/pokemon-gen8/regular/lapras.png', 'https://cdn.statically.io/gh/bradley-erickson/pokesprite/68ce3f7d/pokemon-gen8/regular/gengar.png'],
-                'deck': 'Lapras Gengar'
+                'name': 'Lapras Gengar'
             },
             'games': [
                 {

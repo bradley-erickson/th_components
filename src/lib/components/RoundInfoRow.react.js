@@ -100,7 +100,7 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
                     {data.round}
                     <h4 className='ms-2 my-2'>
                         <span key='opp-icons'>{header_icons}</span>
-                        <span key='opp-deck'>{data.opponent.deck}</span>
+                        <span key='opp-deck'>{data.opponent.name}</span>
                     </h4>
                     <span className='ms-4'>{results.join('').toUpperCase()}</span>
                 </RBCard>
