@@ -30,7 +30,7 @@ app.layout = html.Div([
                     'result': 'l',
                     'flip': 2,
                     'tags': [],
-                    'notes': ''
+                    'notes': 'notes'
                 },
                 {
                     'game': 3,

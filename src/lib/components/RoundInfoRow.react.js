@@ -79,12 +79,13 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
                     >
                         {tags}
                     </div>
-                    <small
-                        key='game-notes'
-                        className={x.notes === 0 ? 'd-none' : ''}
-                    >
-                        {x.notes}
-                    </small>
+                    <div key='game-notes'>
+                        <small
+                            className={x.notes === 0 ? 'd-none' : ''}
+                        >
+                            {x.notes}
+                        </small>
+                    </div>
                 </div>
             </RBCard>
         )
