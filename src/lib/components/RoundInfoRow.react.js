@@ -39,6 +39,9 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
     })
 
     const games = data.games.map(x => {
+        if (x.result === '' & x.flip === '' & x.you_tags.length === 0 & x.opp_tags.length === 0 & x.notes === '') {
+            return <div key={`game-${x.game}`}/>
+        }
         const you_tags = x.you_tags.map(x => {
             return (
                 <Badge

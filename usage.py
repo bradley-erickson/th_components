@@ -38,8 +38,8 @@ app.layout = html.Div([
                     'game': 3,
                     'result': '',
                     'flip': '',
-                    'you_tags': ['opp dead drew'],
-                    'opp_tags': ['opp dead drew'],
+                    'you_tags': [],
+                    'opp_tags': [],
                     'notes': ''
                 }
             ]
