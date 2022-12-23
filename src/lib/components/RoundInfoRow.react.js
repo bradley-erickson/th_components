@@ -24,8 +24,8 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
         );
     }
 
-    const results = data.games.map(x => x.result);
-    const color = (results[results.length - 1] === 'w') ? 'bg-win' : (results[results.length - 1] === 'l') ? 'bg-loss' : 'bg-tie';
+    const results = data.games.filter(x => x.result.length === 1).map(x => x.result);
+    const color = (results[results.length - 1] === 'w') ? 'bg-win' : (results[results.length - 1] === 'l') ? 'bg-loss' : (results[results.length - 1] === 't') ? 'bg-tie' : 'bg-whtie';
 
     const header_icons = data.opponent.src.map((x, index) => {
         return (
