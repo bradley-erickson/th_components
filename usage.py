@@ -22,21 +22,24 @@ app.layout = html.Div([
                     'game': 1,
                     'result': 'w',
                     'flip': 1,
-                    'tags': ['opp dead drew'],
+                    'you_tags': ['opp dead drew'],
+                    'opp_tags': ['opp dead drew'],
                     'notes': 'Opponent draw passed for the first 3 turns.'
                 },
                 {
                     'game': 2,
                     'result': 'l',
                     'flip': 2,
-                    'tags': [],
+                    'you_tags': ['opp dead drew'],
+                    'opp_tags': ['opp dead drew'],
                     'notes': 'notes'
                 },
                 {
                     'game': 3,
-                    'result': 't',
-                    'flip': 1,
-                    'tags': [],
+                    'result': '',
+                    'flip': '',
+                    'you_tags': ['opp dead drew'],
+                    'opp_tags': ['opp dead drew'],
                     'notes': ''
                 }
             ]

@@ -39,7 +39,7 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
     })
 
     const games = data.games.map(x => {
-        const tags = x.tags.map(x => {
+        const you_tags = x.you_tags.map(x => {
             return (
                 <Badge
                     key={x}
@@ -48,6 +48,18 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
                     bg='light'
                 >
                     {x}
+                </Badge>
+            )
+        })
+        const opp_tags = x.opp_tags.map(x => {
+            return (
+                <Badge
+                    key={x}
+                    className='me-1 border'
+                    text='dark'
+                    bg='light'
+                >
+                    {`Opponent ${x.toLowerCase()}`}
                 </Badge>
             )
         })
@@ -75,9 +87,19 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
                     </Badge>
                     <div
                         key='game-tags'
-                        className={tags.length === 0 ? 'd-none' : ''}
                     >
-                        {tags}
+                        <span
+                            key='you-tags'
+                            className={you_tags.length === 0 ? 'd-none' : ''}
+                        >
+                            {you_tags}
+                        </span>
+                        <span
+                            key='opp-tags'
+                            className={opp_tags.length === 0 ? 'd-none' : ''}
+                        >
+                            {opp_tags}
+                        </span>
                     </div>
                     <div key='game-notes'>
                         <small
