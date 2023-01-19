@@ -132,12 +132,12 @@ const RoundInfoRow = React.forwardRef((props, ref) => {
                 </RBCard>
                 <Collapse in={is_open}>
                     <div ref={ref}>
-                        <RBCard
+                        <small
                             key='general-notes'
-                            className='border-0 px-2 py-1 bg-transparent'
+                            className={data.general_notes === 0 ? 'd-none' : ''}
                         >
                             {data.general_notes}
-                        </RBCard>
+                        </small>
                         {games}
                     </div>
                 </Collapse>

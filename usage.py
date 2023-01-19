@@ -17,7 +17,7 @@ app.layout = html.Div([
                 'src': ['https://cdn.statically.io/gh/bradley-erickson/pokesprite/68ce3f7d/pokemon-gen8/regular/lapras.png', 'https://cdn.statically.io/gh/bradley-erickson/pokesprite/68ce3f7d/pokemon-gen8/regular/gengar.png'],
                 'name': 'Lapras Gengar'
             },
-            'general_notes': 'bruh',
+            'general_notes': '',
             'games': [
                 {
                     'game': 1,
