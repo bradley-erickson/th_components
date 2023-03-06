@@ -79,7 +79,8 @@ export default class EditableTable extends Component {
     };
 
     render() {
-        const {id, class_name, data, editIndex, tagOptions} = this.state;
+        const { data, editIndex, tagOptions } = this.state;
+        const { id, class_name, p1Color, p2Color } = this.props;
 
         return (
             <div id={id} className={class_name || ""}>
@@ -105,8 +106,8 @@ export default class EditableTable extends Component {
                                 onCancel={this.handleCancelRow}
                                 onEdit={this.handleEditRow}
                                 onDelete={this.handleDeleteRow}
-                                p1Color='green'
-                                p2Color='magenta'
+                                p1Color={p1Color}
+                                p2Color={p2Color}
                             />
                         ))}
                     </tbody>
@@ -115,6 +116,11 @@ export default class EditableTable extends Component {
             </div>
         );
     }
+}
+
+EditableTable.defaultProps = {
+    p1Color: 'red',
+    p2Color: 'blue'
 }
 
 EditableTable.propTypes = {
@@ -144,4 +150,9 @@ EditableTable.propTypes = {
      * to Dash, to make them available for callbacks.
      */
     setProps: PropTypes.func,
+    
+    /** Color associated with P1 */
+    p1Color: PropTypes.string,
+    /** Color associated with P2 */
+    p2Color: PropTypes.string,
 };

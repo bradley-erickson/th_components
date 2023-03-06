@@ -117,6 +117,28 @@
         },
         "required": false,
         "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      },
+      "p1Color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color associated with P1",
+        "defaultValue": {
+          "value": "'red'",
+          "computed": false
+        }
+      },
+      "p2Color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Color associated with P2",
+        "defaultValue": {
+          "value": "'blue'",
+          "computed": false
+        }
       }
     }
   },

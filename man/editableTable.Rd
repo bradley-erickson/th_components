@@ -10,7 +10,8 @@
 }
 
 \usage{
-editableTable(id=NULL, class_name=NULL, data=NULL)
+editableTable(id=NULL, class_name=NULL, data=NULL, p1Color=NULL,
+p2Color=NULL)
 }
 
 \arguments{
@@ -24,6 +25,10 @@ those elements have the following types:
   - first (character; optional): the name of the player that went first
   - p1tags (list of characters; optional): an array of tags associated with player 1
   - p2tags (list of characters; optional): an array of tags associated with player 2s. An array of objects representing the rows of the table}
+
+\item{p1Color}{Character. Color associated with P1}
+
+\item{p2Color}{Character. Color associated with P2}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

@@ -30,16 +30,22 @@ Keyword arguments:
         An array of tags associated with player 2.
 
     - winner (string; optional):
-        The name of the winner."""
+        The name of the winner.
+
+- p1Color (string; default 'red'):
+    Color associated with P1.
+
+- p2Color (string; default 'blue'):
+    Color associated with P2."""
     _children_props = []
     _base_nodes = ['children']
     _namespace = 'th_components'
     _type = 'EditableTable'
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, class_name=Component.UNDEFINED, data=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'class_name', 'data']
+    def __init__(self, id=Component.UNDEFINED, class_name=Component.UNDEFINED, data=Component.UNDEFINED, p1Color=Component.UNDEFINED, p2Color=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'class_name', 'data', 'p1Color', 'p2Color']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'class_name', 'data']
+        self.available_properties = ['id', 'class_name', 'data', 'p1Color', 'p2Color']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
