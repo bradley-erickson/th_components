@@ -1,7 +1,11 @@
 /* eslint no-magic-numbers: 0 */
 import React, {Component} from 'react';
 
-import { RoundInfoRow } from '../lib';
+// import { RoundInfoRow } from '../lib';
+import EditableTable from '../lib/components/EditableTable.react';
+
+import './styles.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
 
@@ -20,9 +24,10 @@ class App extends Component {
     render() {
         return (
             <div>
-                <RoundInfoRow
+                <EditableTable
+                    data={[{winner: 'P1', first: 'P2', p1Tags: ['bro'], p2Tags: ['bro2']}]}
+                    tagOptions={[]}
                     setProps={this.setProps}
-                    {...this.state}
                 />
             </div>
         )

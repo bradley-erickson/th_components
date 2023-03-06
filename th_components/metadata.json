@@ -1,6 +1,127 @@
 {
+  "src/lib/components/EditableTable.react.js": {
+    "description": "",
+    "displayName": "EditableTable",
+    "methods": [
+      {
+        "name": "handleAddRow",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleSaveRow",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "index",
+            "type": null
+          },
+          {
+            "name": "newData",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleCancelRow",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleEditRow",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleDeleteRow",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "index",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "class_name": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Classes for the outer most card."
+      },
+      "data": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "winner": {
+                "name": "string",
+                "description": "The name of the winner",
+                "required": false
+              },
+              "first": {
+                "name": "string",
+                "description": "The name of the player that went first",
+                "required": false
+              },
+              "p1Tags": {
+                "name": "arrayOf",
+                "value": {
+                  "name": "string"
+                },
+                "description": "An array of tags associated with player 1",
+                "required": false
+              },
+              "p2Tags": {
+                "name": "arrayOf",
+                "value": {
+                  "name": "string"
+                },
+                "description": "An array of tags associated with player 2",
+                "required": false
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "An array of objects representing the rows of the table"
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      }
+    }
+  },
   "src/lib/components/RoundInfoRow.react.js": {
-    "description": "ExampleComponent is an example component.\r\nIt takes a property, `label`, and\r\ndisplays it.\r\nIt renders an input with the property `value`\r\nwhich is editable by the user.",
+    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
     "methods": [],
     "props": {
       "id": {
@@ -36,7 +157,7 @@
           "name": "func"
         },
         "required": false,
-        "description": "Dash-assigned callback that should be called to report property changes\r\nto Dash, to make them available for callbacks."
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
       },
       "loading_state": {
         "type": {
@@ -61,6 +182,386 @@
         },
         "required": false,
         "description": "Object that holds the loading state object coming from dash-renderer"
+      }
+    }
+  },
+  "src/lib/components/SimpleGameRow.js": {
+    "description": "",
+    "displayName": "SimpleGameRow",
+    "methods": [
+      {
+        "name": "handleWinner",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "winner",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleCoin",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "flip",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleAddP1Tag",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "newTag",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleAddP2Tag",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "newTag",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleRemoveP1Tag",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "remTag",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleRemoveP2Tag",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "remTag",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleSave",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleCancel",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "index": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "rowData": {
+        "type": {
+          "name": "shape",
+          "value": {
+            "winner": {
+              "name": "string",
+              "required": false
+            },
+            "first": {
+              "name": "string",
+              "required": false
+            },
+            "p1Tags": {
+              "name": "arrayOf",
+              "value": {
+                "name": "string"
+              },
+              "required": false
+            },
+            "p2Tags": {
+              "name": "arrayOf",
+              "value": {
+                "name": "string"
+              },
+              "required": false
+            }
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "tagOptions": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": ""
+      },
+      "isEditMode": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onEdit": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onDelete": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onSave": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "onCancel": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "p1Color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'#d9534f'",
+          "computed": false
+        }
+      },
+      "p2Color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'#f0ad4e'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/SwtichToggle.react.js": {
+    "description": "A SwitchToggle component that can be toggled on or off.\n\n@component\n@param {string} value - The current value of the component.\n@param {string} name - The name of the component.\n@param {function} onChange - A function that is called when the component is changed.\n@param {string} [onText=\"On\"] - The text to display when the component is in the on position.\n@param {string} [offText=\"Off\"] - The text to display when the component is in the off position.\n@param {string} [onColor=\"green\"] - The color to display when the component is in the on position.\n@param {string} [offColor=\"red\"] - The color to display when the component is in the off position.",
+    "displayName": "SwitchToggle",
+    "methods": [
+      {
+        "name": "handleClick",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The current value of the switch"
+      },
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The name attribute of the radio buttons"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "A function to be called when the switch is toggled"
+      },
+      "onText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text to display when the switch is on",
+        "defaultValue": {
+          "value": "'On'",
+          "computed": false
+        }
+      },
+      "offText": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The text to display when the switch is off",
+        "defaultValue": {
+          "value": "'Off'",
+          "computed": false
+        }
+      },
+      "onColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The color of the switch when it is on",
+        "defaultValue": {
+          "value": "'green'",
+          "computed": false
+        }
+      },
+      "offColor": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The color of the switch when it is off",
+        "defaultValue": {
+          "value": "'red'",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/TagInput.react.js": {
+    "description": "A component for displaying and editing a list of tags.\n\n@component\n@param {Array} value - An array of tags to be displayed\n@param {Array} options - An array of suggested tags for autocomplete\n@param {Function} onChange - A function to be called when a new tag is added\n@param {Function} onRemove - A function to be called when a tag is removed\n@param {String} color - The background color of each tag",
+    "displayName": "TagInput",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleAddTag",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleKeyDown",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleRemoveTag",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "tag",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "value": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "An array of tags to be displayed"
+      },
+      "options": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "string"
+          }
+        },
+        "required": false,
+        "description": "An array of suggested tags for autocomplete"
+      },
+      "onChange": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "A function to be called when a new tag is added"
+      },
+      "onRemove": {
+        "type": {
+          "name": "func"
+        },
+        "required": true,
+        "description": "A function to be called when a tag is removed"
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The background color of each tag",
+        "defaultValue": {
+          "value": "'blue'",
+          "computed": false
+        }
       }
     }
   }

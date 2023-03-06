@@ -5,7 +5,11 @@ using Dash
 const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
 const version = "0.0.1"
 
-include("jl/''_roundinforow.jl")
+include("jl/editabletable.jl")
+include("jl/roundinforow.jl")
+include("jl/simplegamerow.jl")
+include("jl/swtichtoggle.jl")
+include("jl/taginput.jl")
 
 function __init__()
     DashBase.register_package(
