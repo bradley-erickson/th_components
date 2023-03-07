@@ -112,7 +112,10 @@ export default class EditableTable extends Component {
                         ))}
                     </tbody>
                 </table>
-                <button className="btn" onClick={this.handleAddRow}>Add Row</button>
+                <button className="btn" onClick={this.handleAddRow}>
+                    <i className="fas fa-plus me-1" />
+                    Add Row
+                </button>
             </div>
         );
     }
