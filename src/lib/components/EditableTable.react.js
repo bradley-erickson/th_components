@@ -84,7 +84,7 @@ export default class EditableTable extends Component {
 
         return (
             <div id={id} className={class_name || ""}>
-                <table className='editabletable table table-striped'>
+                <table className='editabletable table'>
                     <thead>
                         <tr>
                             <th>Winner</th>
