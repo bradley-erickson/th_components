@@ -11,6 +11,13 @@
         "returns": null
       },
       {
+        "name": "handleClear",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
         "name": "handleSaveRow",
         "docblock": null,
         "modifiers": [],

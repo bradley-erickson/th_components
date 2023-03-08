@@ -19,6 +19,7 @@ export default class EditableTable extends Component {
             tagOptions: uniqueTags,
         };
         this.handleAddRow = this.handleAddRow.bind(this);
+        this.handleClear = this.handleClear.bind(this);
         this.handleSaveRow = this.handleSaveRow.bind(this);
         this.handleCancelRow = this.handleCancelRow.bind(this);
         this.handleEditRow = this.handleEditRow.bind(this);
@@ -26,12 +27,19 @@ export default class EditableTable extends Component {
     }
 
     handleAddRow() {
-        const {data} = this.state;
+        const { data } = this.state;
         const newData = [
             ...data,
             {winner: 'P1', first: 'P1', p1Tags: [], p2Tags: []},
         ];
-        this.setState({data: newData, editIndex: newData.length - 1});
+        this.setState({ data: newData, editIndex: newData.length - 1});
+    };
+
+    handleClear() {
+        const confirmed = window.confirm('Are you sure you want to do this?');
+        if (confirmed) {
+            this.setState({ data: [], editIndex: -1 })
+        }
     };
 
     handleSaveRow(index, newData) {
@@ -115,6 +123,10 @@ export default class EditableTable extends Component {
                 <button className="btn" onClick={this.handleAddRow}>
                     <i className="fas fa-plus me-1" />
                     Add Row
+                </button>
+                <button className="btn" onClick={this.handleClear}>
+                    <i className="fas fa-trash me-1" />
+                    Clear Data
                 </button>
             </div>
         );
