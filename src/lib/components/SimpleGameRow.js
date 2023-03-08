@@ -96,7 +96,7 @@ export default class SimpleGameRow extends Component {
 
         return (
             <tr>
-                <td className="w-100">
+                <td>
                     {isEditMode ? (
                         <>
                             <div className="editrow-toggle">
@@ -128,7 +128,7 @@ export default class SimpleGameRow extends Component {
                                 </div>
                             </div>
                             <div className="d-flex row align-middle">
-                                P1 tags:
+                                <span>P1 tags:</span>
                                 <div className="ms-1 d-inline-block">
                                     <TagInput
                                         options={tagOptions}
@@ -140,7 +140,7 @@ export default class SimpleGameRow extends Component {
                                 </div>
                             </div>
                             <div className="d-flex row align-middle">
-                                P2 tags:
+                                <span>P2 tags:</span>
                                 <div className="ms-1 d-inline-block">
                                     <TagInput
                                         options={tagOptions}
