@@ -30,14 +30,14 @@ export default class SwitchToggle extends Component {
         const text = this.isOn ? onText : offText;
         const bgColor = this.isOn ? onColor : offColor;
         return (
-            <div
+            <span
                 className={`toggle-switch ${this.isOn ? 'on' : 'off'}`}
                 onClick={this.handleClick}
                 style={{backgroundColor: bgColor}}
             >
                 <div className="toggle-switch-handle"></div>
                 <div className="toggle-switch-text">{text}</div>
-            </div>
+            </span>
         );
     }
 }

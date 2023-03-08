@@ -93,15 +93,6 @@ export default class EditableTable extends Component {
         return (
             <div id={id} className={class_name || ""}>
                 <table className='editabletable'>
-                    <thead>
-                        <tr>
-                            <th>Winner</th>
-                            <th>Went first</th>
-                            <th>P1 tags</th>
-                            <th>P2 tags</th>
-                            <th></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         {data.map((row, index) => (
                             <SimpleGameRow

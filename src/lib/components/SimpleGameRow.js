@@ -96,88 +96,88 @@ export default class SimpleGameRow extends Component {
 
         return (
             <tr>
-                <td>
-                    {isEditMode ? (
-                        <SwitchToggle
-                            onChange={this.handleWinner}
-                            name="winner"
-                            value={winner}
-                            onText="P1"
-                            offText="P2"
-                            onColor={p1Color}
-                            offColor={p2Color}
-                        />
-                    ) : (
-                        rowData.winner
-                    )}
-                </td>
-                <td>
-                    {isEditMode ? (
-                        <SwitchToggle
-                            onChange={this.handleCoin}
-                            name="first"
-                            value={first}
-                            onText="P1"
-                            offText="P2"
-                            onColor={p1Color}
-                            offColor={p2Color}
-                        />
-                    ) : (
-                        rowData.first
-                    )}
-                </td>
-                <td>
-                    {isEditMode ? (
-                        <TagInput
-                            options={tagOptions}
-                            value={p1Tags}
-                            onChange={this.handleAddP1Tag}
-                            onRemove={this.handleRemoveP1Tag}
-                            color={p1Color}
-                        />
-                    ) : (
-                        p1Tags.map((tag, index) => (
-                            <span
-                                key={index}
-                                className="tag"
-                                style={{backgroundColor: p1Color}}
-                            >
-                                {tag}
-                            </span>
-                        ))
-                    )}
-                </td>
-                <td>
-                    {isEditMode ? (
-                        <TagInput
-                            options={tagOptions}
-                            value={p2Tags}
-                            onChange={this.handleAddP2Tag}
-                            onRemove={this.handleRemoveP2Tag}
-                            color={p2Color}
-                        />
-                    ) : (
-                        p2Tags.map((tag, index) => (
-                            <span
-                                key={index}
-                                className="tag"
-                                style={{backgroundColor: p2Color}}
-                            >
-                                {tag}
-                            </span>
-                        ))
-                    )}
-                </td>
-                <td>
+                <td className="w-100">
                     {isEditMode ? (
                         <>
-                            <button className="btn" onClick={this.handleSave} title="Save">
+                            <div className="editrow-toggle">
+                                <span>Winner:</span>
+                                <div className="ms-1 d-inline-block">
+                                    <SwitchToggle
+                                        onChange={this.handleWinner}
+                                        name="winner"
+                                        value={winner}
+                                        onText="P1"
+                                        offText="P2"
+                                        onColor={p1Color}
+                                        offColor={p2Color}
+                                    />
+                                </div>
+                            </div>
+                            <div className="editrow-toggle">
+                                <span>Went first:</span>
+                                <div className="ms-1 d-inline-block">
+                                    <SwitchToggle
+                                        onChange={this.handleCoin}
+                                        name="first"
+                                        value={first}
+                                        onText="P1"
+                                        offText="P2"
+                                        onColor={p1Color}
+                                        offColor={p2Color}
+                                    />
+                                </div>
+                            </div>
+                            <div className="d-flex row align-middle">
+                                P1 tags:
+                                <div className="ms-1 d-inline-block">
+                                    <TagInput
+                                        options={tagOptions}
+                                        value={p1Tags}
+                                        onChange={this.handleAddP1Tag}
+                                        onRemove={this.handleRemoveP1Tag}
+                                        color={p1Color}
+                                    />
+                                </div>
+                            </div>
+                            <div className="d-flex row align-middle">
+                                P2 tags:
+                                <div className="ms-1 d-inline-block">
+                                    <TagInput
+                                        options={tagOptions}
+                                        value={p2Tags}
+                                        onChange={this.handleAddP2Tag}
+                                        onRemove={this.handleRemoveP2Tag}
+                                        color={p2Color}
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    ) : (
+                        `Game ${index+1} - ${rowData.winner}`
+                    )}
+                </td>
+                <td className='w-auto text-nowrap'>
+                    {isEditMode ? (
+                        <>
+                            <button
+                                className="btn"
+                                onClick={this.handleSave}
+                                title="Save"
+                            >
                                 <i className="fas fa-save" />
-                                <span className="ms-1 d-none d-lg-inline">Save</span>
+                                <span className="ms-1 d-none d-lg-inline">
+                                    Save
+                                </span>
                             </button>
-                            <button className="btn" onClick={this.handleCancel} title="Cancel">
+                            <button
+                                className="btn"
+                                onClick={this.handleCancel}
+                                title="Cancel"
+                            >
                                 <i className="fas fa-times" />
-                                <span className="ms-1 d-none d-lg-inline">Cancel</span>
+                                <span className="ms-1 d-none d-lg-inline">
+                                    Cancel
+                                </span>
                             </button>
                         </>
                     ) : (
@@ -188,7 +188,9 @@ export default class SimpleGameRow extends Component {
                                 title="Edit"
                             >
                                 <i className="fas fa-edit" />
-                                <span className="ms-1 d-none d-lg-inline">Edit</span>
+                                <span className="ms-1 d-none d-lg-inline">
+                                    Edit
+                                </span>
                             </button>
                             <button
                                 className="btn"
@@ -196,7 +198,9 @@ export default class SimpleGameRow extends Component {
                                 title="Delete"
                             >
                                 <i className="fas fa-trash" />
-                                <span className="ms-1 d-none d-lg-inline">Delete</span>
+                                <span className="ms-1 d-none d-lg-inline">
+                                    Delete
+                                </span>
                             </button>
                         </>
                     )}
