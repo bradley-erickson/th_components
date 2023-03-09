@@ -87,8 +87,8 @@ export default class EditableTable extends Component {
     };
 
     render() {
-        const { data, editIndex, tagOptions } = this.state;
-        const { id, class_name, p1Color, p2Color } = this.props;
+        const { editIndex, tagOptions } = this.state;
+        const { id, class_name, p1Color, p2Color, data } = this.props;
 
         return (
             <div id={id} className={class_name || ""}>
@@ -126,7 +126,7 @@ export default class EditableTable extends Component {
 
 EditableTable.defaultProps = {
     p1Color: 'red',
-    p2Color: 'blue'
+    p2Color: 'blue',
 }
 
 EditableTable.propTypes = {
