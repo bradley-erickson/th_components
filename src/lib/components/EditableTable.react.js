@@ -11,10 +11,17 @@ export default class EditableTable extends Component {
             const allTags = [...currentObject.p1Tags, ...currentObject.p2Tags];
             const uniqueTagsInObject = new Set(allTags);
             return [...accumulator, ...uniqueTagsInObject];
-          }, []);
+        }, []);
+
+        let savedData;
+        try {
+            savedData = JSON.parse(localStorage.getItem('editabletable-data'));
+        } catch (error) {
+            console.error('Error parsing saved data:', error);
+        }
 
         this.state = {
-            data: props.data,
+            data: savedData || props.data,
             editIndex: -1,
             tagOptions: uniqueTags,
         };
@@ -26,21 +33,26 @@ export default class EditableTable extends Component {
         this.handleDeleteRow = this.handleDeleteRow.bind(this);
     }
 
-    handleAddRow() {
+    componentDidUpdate() {
         const { data } = this.state;
+        localStorage.setItem('editabletable-data', JSON.stringify(data));
+    }
+
+    handleAddRow() {
+        const {data} = this.state;
         const newData = [
             ...data,
             {winner: 'P1', first: 'P1', p1Tags: [], p2Tags: []},
         ];
-        this.setState({ data: newData, editIndex: newData.length - 1});
-    };
+        this.setState({data: newData, editIndex: newData.length - 1});
+    }
 
     handleClear() {
         const confirmed = window.confirm('Are you sure you want to do this?');
         if (confirmed) {
-            this.setState({ data: [], editIndex: -1 })
+            this.setState({data: [], editIndex: -1});
         }
-    };
+    }
 
     handleSaveRow(index, newData) {
         const {data, tagOptions} = this.state;
@@ -64,15 +76,15 @@ export default class EditableTable extends Component {
             editIndex: -1,
             tagOptions: newTagOptions,
         });
-    };
+    }
 
     handleCancelRow() {
         this.setState({editIndex: -1});
-    };
+    }
 
     handleEditRow(index) {
         this.setState({editIndex: index});
-    };
+    }
 
     handleDeleteRow(index) {
         const confirmed = window.confirm('Are you sure you want to do this?');
@@ -84,15 +96,15 @@ export default class EditableTable extends Component {
             ];
             this.setState({data: updatedData, editIndex: -1});
         }
-    };
+    }
 
     render() {
-        const { data, editIndex, tagOptions } = this.state;
-        const { id, class_name, p1Color, p2Color } = this.props;
+        const {data, editIndex, tagOptions} = this.state;
+        const {id, class_name, p1Color, p2Color} = this.props;
 
         return (
-            <div id={id} className={class_name || ""}>
-                <table className='editabletable'>
+            <div id={id} className={class_name || ''}>
+                <table className="editabletable">
                     <tbody>
                         {data.map((row, index) => (
                             <SimpleGameRow
@@ -127,7 +139,7 @@ export default class EditableTable extends Component {
 EditableTable.defaultProps = {
     p1Color: 'red',
     p2Color: 'blue',
-}
+};
 
 EditableTable.propTypes = {
     /**
@@ -156,7 +168,7 @@ EditableTable.propTypes = {
      * to Dash, to make them available for callbacks.
      */
     setProps: PropTypes.func,
-    
+
     /** Color associated with P1 */
     p1Color: PropTypes.string,
     /** Color associated with P2 */

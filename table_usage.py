@@ -11,7 +11,6 @@ app.layout = html.Div([
     th_components.EditableTable(
         data=[{'winner': 'p1', 'first': 'p2', 'p1Tags': ['bro'], 'p2Tags': []}],
         id='input',
-        persistence_type='local'
     ),
     html.Div(id='output')
 ])
