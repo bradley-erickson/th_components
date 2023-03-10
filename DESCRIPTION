@@ -1,6 +1,6 @@
 Package: thComponents
 Title: Custom components for use on the Trainer Hill site
-Version: 0.0.1
+Version: 0.0.2
 Description: Custom components for use on the Trainer Hill site
 Depends: R (>= 3.0.2)
 Imports: 
