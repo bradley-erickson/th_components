@@ -1,6 +1,6 @@
 {
   "name": "th_components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom components for use on the Trainer Hill site",
   "main": "build/index.js",
   "scripts": {
@@ -16,6 +16,8 @@
   "author": "Bradley Erickson <bbwe24@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.2.3",
     "ramda": "^0.26.1",
     "react-bootstrap": "^2.6.0"
   },

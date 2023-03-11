@@ -16,6 +16,9 @@ export default class EditableTable extends Component {
         let savedData;
         try {
             savedData = JSON.parse(localStorage.getItem('editabletable-data'));
+            if (savedData) {
+                props.setProps({data: savedData});
+            }
         } catch (error) {
             console.error('Error parsing saved data:', error);
         }
@@ -125,7 +128,7 @@ export default class EditableTable extends Component {
                 </table>
                 <button className="btn" onClick={this.handleAddRow}>
                     <i className="fas fa-plus me-1" />
-                    Add Row
+                    Add Game
                 </button>
                 <button className="btn" onClick={this.handleClear}>
                     <i className="fas fa-trash me-1" />
